@@ -7,10 +7,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Flex\Response;
 
 
 class RegistrationController extends Controller
-{   private function Genere_Password($size)
+{   
+    private function Genere_Password($size)
     {
         $password = "";
         // Initialisation des caractères utilisables
@@ -23,8 +25,6 @@ class RegistrationController extends Controller
 
         return $password;
     }
-
-
     /**
      * @Route("/register", name="user_registration")
      */
@@ -48,8 +48,7 @@ class RegistrationController extends Controller
             // maybe set a "flash" success message for the user
             return $this->redirectToRoute('login');
         }
-        return $this->render(
-            'inscription.html.twig',
+        return $this->render('inscription.html.twig',
             array('form' => $form->createView())
         );
     }
