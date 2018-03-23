@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	<h1>Ceci est une Maryse à but non lucratif.</h1>
+	<div id="cadre_inscri">		
+		<div id="inscription">
+			<h2 class="titre_entree">Inscription</h2>
+			<div id="form">
+				{{ form_start(form) }}
+				<div class=>
+					{{ form_row(form.civilite, { attr: { 'label': '', 'class': 'une_classe' } }) }}
+				</div>	
+				<div class="">
+					{{ form_row(form.factSite, { attr: { 'label': '', 'class': 'une_classe' } }) }}
+				</div>
+				<div class="">
+					{{ form_row(form.lastname, { attr: { 'label': '', 'class': 'une_classe' } }) }}				
+				</div>
+				<div class="">
+					{{ form_row(form.firstname, { attr: { 'label': '', 'class': 'une_classe' } }) }}		
+				</div>
+				<div class="">
+					{{ form_row(form.phone, { attr: { 'label': '', 'class': 'une_classe' } }) }}		
+				</div>
+				<div class="">
+					{{ form_row(form.address, { attr: { 'label': '', 'class': 'une_classe' } }) }}		
+				</div>
+				<div class="">
+					{{ form_row(form.cp, { attr: { 'label': '', 'class': 'une_classe' } }) }}		
+				</div>
+				<div class="">
+					{{ form_row(form.town, { attr: { 'label': '', 'class': 'une_classe' } }) }}		
+				</div>
+				<div class="">
+					{{ form_row(form.mail, { attr: { 'label': '', 'class': 'une_classe' } }) }}		
+				</div>
+				<div class="">
+					{{ form_row(form.quest1, { attr: { 'label': '', 'class': 'une_classe' } }) }}
+					
+  						
+						<!--<select method="post" name="quest1" onchange="otherStruct(this);">
+							<option value="cci">CCI</option>
+							<option value="cma">CMA</option>
+							<option value="bge">BGE</option>
+							<option value="adie">ADIE</option>
+		                    <option value="choix">Autre(s) structure(s),préciser:</option>
+	                	</select>-->
+	                	
+				</div>
+				<div class="">
+					{{ form_row(form.quest2, { attr: { 'label': '', 'class': 'une_classe' } }) }}		
+				</div>
+				<div class="">
+					{{ form_row(form.quest3, { attr: { 'label': '', 'class': 'une_classe' } }) }}		
+				</div>
+				<div class="">
+					{{ form_row(form.quest4, { attr: { 'label': '', 'class': 'une_classe' } }) }}		
+				</div>
+				<button class="btn_inscri" type="submit">Valider</button>
+				{{ form_end(form) }}
+			</div>			
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+
+		<script type="text/javascript">
+            function otherStruct(select) {
+                if(select.value == 'choix') {
+                    var choix = document.createElement('input');
+                    select.form.onsubmit = function() {
+                        var option = document.createElement('option');
+                        option.innerHTML = choix.value;
+                        option.value = choix.value.substring(0, 2);
+                        choix.parentNode.replaceChild(select, choix);
+                        select.insertBefore(option, select.firstChild);
+                        select.selectedIndex = 0;
+                    }
+                    select.parentNode.replaceChild(choix, select);
+                }
+            }
+        </script>
+{% endblock %}
+
