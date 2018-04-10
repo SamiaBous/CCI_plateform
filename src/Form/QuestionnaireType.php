@@ -16,35 +16,34 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 class QuestionnaireType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
-    {
+    {   
         $builder
+            ->add('factSite', TextType::class, array('label' => "Commune d'Implantation"))
             ->add('civilite', ChoiceType::class, array(
                 'choices' => array(
                         'Madame' => 'femme',
                         'Monsieur' => 'homme',
                        ),
                 'label' => "Civilité"))
-
-            ->add('factSite', TextType::class, array('label' => "Commune d'Implantation"))
             ->add('lastname', TextType::class, array('label' => "Nom"))
             ->add('firstname', TextType::class, array('label' => "Prénom"))
             ->add('phone', TextType::class, array('label' => "Téléphone fixe/portable"))
             ->add('address', TextType::class, array('label' => "Adresse postale"))
-            ->add('cp', TextType::class, array('label' => "CP"))
-            ->add('town', TextType::class, array('label' => "Commune"))
+            //->add('cp', TextType::class, array('label' => "CP"))
+            //->add('town', TextType::class, array('label' => "Commune"))
             ->add('mail', EmailType::class, array('label' => "Adresse mail"))
-            ->add('quest1', ChoiceType::class, array(
-                'choices' => array(
-                       "Chambre de Commerce et d'Industrie (CCI)" => 'CCI',
-                       "Chambre des Métiers et de l'Artisanat (CMA)" => 'CMA',
-                       "Boutique de Gestion des Entreprises (BGE)" => 'BGE',
-                       "Association pour le Droit à l'Initiative Economique (ADIE)" => 'ADIE',
-                       "Autre(s) structure(s):" => '',
-                       "Aucune de ces structures" => 'aucune',
-                      ),
-                'label' => "Avez-vous déjà rencontré l'une ou plusieurs des structures d'accompagnement suivantes?",
+            //->add('quest1', ChoiceType::class, array(
+                //'choices' => array(
+                 //      "Chambre de Commerce et d'Industrie (CCI)" => 'CCI',
+                 //      "Chambre des Métiers et de l'Artisanat (CMA)" => 'CMA',
+                  //     "Boutique de Gestion des Entreprises (BGE)" => 'BGE',
+                  //     "Association pour le Droit à l'Initiative Economique (ADIE)" => 'ADIE',
+                  //     "Autre(s) structure(s):" => '',
+                  //     "Aucune de ces structures" => 'aucune',
+                   //   ),
+                //'label' => "Avez-vous déjà rencontré l'une ou plusieurs des structures d'accompagnement suivantes?",
                      
-                ))
+                //))
              
             ->add('quest2', ChoiceType::class, array(
                 'choices' => array(
@@ -54,7 +53,16 @@ class QuestionnaireType extends AbstractType
                         'Industrie' => 'Industrie',
                         'Artisanat' => 'Artisanat',
                         'Commerce' => 'Commerce',
-                        'Service' => 'Service',
+                        'Service' => array(
+                             "Coiffure-Esthétique-Toilettage animaux" => "Coiffure-Esthétique-Toilettage animaux",
+                             "Réparations et installations en tout genre" => "Réparations et installations en tout genre",
+                             "Taxi-Ambulance-Déménagement" => "Taxi-Ambulance-Déménagement",
+                             "Photographe" => "Photographe",
+                             "Secrétariat-Administrartif" => "Secrétariat-Administrartif",
+                             "Nettoyage de locaux,Pressing,Ramonage" => "Nettoyage de locaux,Pressing,Ramonage",
+                             "Funéraires-Soins Mortuaires" => "Funéraires-Soins Mortuaires",
+                             "Autres services" =>"",
+                                  ),
                         'Autre activité' => '',
                         'Activité non encore définie' => 'Activité non encore définie',
                       ),
@@ -77,7 +85,9 @@ class QuestionnaireType extends AbstractType
                         'Ne sait pas' => 'Ne sait pas',
                       ),
                 'label' => "Pensez-vous obtenir un financement bancaire?"
-            ));
+            ))
+
+            ->add('comment', TextType::class, array('label' => "Commentaire"));
             
     }
 

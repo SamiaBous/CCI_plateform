@@ -66,17 +66,31 @@ class Questionnaire
 
     /**
      * @var string|null
-     *
-     * @ORM\Column(name="cp", type="string", length=5, nullable=true)
+     * 
+     * @Assert\NotBlank()
+     * @ORM\Column(name="code_postal", type="string", length=255, nullable=true)
      */
-    private $cp;
+    public $CodePostal;
+
+    /**
+     * @var \App\Entity\AutoCompletionCPVille
+     *
+     * @ORM\OneToOne(targetEntity="App\Entity\AutoCompletionCPVille")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_epci", referencedColumnName="id")
+     * })
+     */
+    private $idEpci;
 
     /**
      * @var string|null
-     *
-     * @ORM\Column(name="commune", type="string", length=25, nullable=true)
+     * 
+     * @Assert\NotBlank()
+     * @ORM\Column(name="commune", type="string", length=255, nullable=true)
      */
-    private $town;
+    public $Ville;
+
+
 
     /**
      * @var string|null
@@ -112,6 +126,13 @@ class Questionnaire
      * @ORM\Column(name="question_4", type="string", length=255, nullable=true)
      */
     private $quest4;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="commentaire", type="string", length=255, nullable=true)
+     */
+    private $comment;
 
    
 
@@ -255,45 +276,7 @@ class Questionnaire
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
-    public function getCp()
-    {
-        return $this->cp;
-    }
-
-    /**
-     * @param string|null $cp
-     *
-     * @return self
-     */
-    public function setCp($cp)
-    {
-        $this->cp = $cp;
-
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getTown()
-    {
-        return $this->town;
-    }
-
-    /**
-     * @param string|null $town
-     *
-     * @return self
-     */
-    public function setTown($town)
-    {
-        $this->town = $town;
-
-        return $this;
-    }
+    
 
     /**
      * @return string|null
@@ -396,5 +379,83 @@ class Questionnaire
     }
 
     
+    /**
+     * @return string|null
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
 
+    /**
+     * @param string|null $comment
+     *
+     * @return self
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCodePostal()
+    {
+        return $this->CodePostal;
+    }
+
+    /**
+     * @param string|null $CodePostal
+     *
+     * @return self
+     */
+    public function setCodePostal($CodePostal)
+    {
+        $this->CodePostal = $CodePostal;
+
+        return $this;
+    }
+
+    /**
+     * @return \App\Entity\AutoCompletionCPVille
+     */
+    public function getIdEpci()
+    {
+        return $this->idEpci;
+    }
+
+    /**
+     * @param \App\Entity\AutoCompletionCPVille $idEpci
+     *
+     * @return self
+     */
+    public function setIdEpci(\App\Entity\AutoCompletionCPVille $idEpci)
+    {
+        $this->idEpci = $idEpci;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getVille()
+    {
+        return $this->Ville;
+    }
+
+    /**
+     * @param string|null $Ville
+     *
+     * @return self
+     */
+    public function setVille($Ville)
+    {
+        $this->Ville = $Ville;
+
+        return $this;
+    }
 }
