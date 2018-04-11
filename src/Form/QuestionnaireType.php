@@ -29,21 +29,21 @@ class QuestionnaireType extends AbstractType
             ->add('firstname', TextType::class, array('label' => "Prénom"))
             ->add('phone', TextType::class, array('label' => "Téléphone fixe/portable"))
             ->add('address', TextType::class, array('label' => "Adresse postale"))
-            //->add('cp', TextType::class, array('label' => "CP"))
-            //->add('town', TextType::class, array('label' => "Commune"))
+            ->add('code_postal', TextType::class, array('label' => "CP"))
+            ->add('commune', TextType::class, array('label' => "Commune"))
             ->add('mail', EmailType::class, array('label' => "Adresse mail"))
-            //->add('quest1', ChoiceType::class, array(
-                //'choices' => array(
-                 //      "Chambre de Commerce et d'Industrie (CCI)" => 'CCI',
-                 //      "Chambre des Métiers et de l'Artisanat (CMA)" => 'CMA',
-                  //     "Boutique de Gestion des Entreprises (BGE)" => 'BGE',
-                  //     "Association pour le Droit à l'Initiative Economique (ADIE)" => 'ADIE',
-                  //     "Autre(s) structure(s):" => '',
-                  //     "Aucune de ces structures" => 'aucune',
-                   //   ),
-                //'label' => "Avez-vous déjà rencontré l'une ou plusieurs des structures d'accompagnement suivantes?",
+            ->add('quest1', ChoiceType::class, array(
+                'choices' => array(
+                       "Chambre de Commerce et d'Industrie (CCI)" => 'CCI',
+                      "Chambre des Métiers et de l'Artisanat (CMA)" => 'CMA',
+                      "Boutique de Gestion des Entreprises (BGE)" => 'BGE',
+                       "Association pour le Droit à l'Initiative Economique (ADIE)" => 'ADIE',
+                       "Autre(s) structure(s):" => '',
+                       "Aucune de ces structures" => 'aucune',
+                      ),
+                'label' => "Avez-vous déjà rencontré l'une ou plusieurs des structures d'accompagnement suivantes?",
                      
-                //))
+                ))
              
             ->add('quest2', ChoiceType::class, array(
                 'choices' => array(

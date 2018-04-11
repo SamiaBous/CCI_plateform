@@ -70,17 +70,7 @@ class Questionnaire
      * @Assert\NotBlank()
      * @ORM\Column(name="code_postal", type="string", length=255, nullable=true)
      */
-    public $CodePostal;
-
-    /**
-     * @var \App\Entity\AutoCompletionCPVille
-     *
-     * @ORM\OneToOne(targetEntity="App\Entity\AutoCompletionCPVille")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_epci", referencedColumnName="id")
-     * })
-     */
-    private $idEpci;
+    public $codePostal;
 
     /**
      * @var string|null
@@ -88,8 +78,7 @@ class Questionnaire
      * @Assert\NotBlank()
      * @ORM\Column(name="commune", type="string", length=255, nullable=true)
      */
-    public $Ville;
-
+    public $commune;
 
 
     /**
@@ -399,22 +388,26 @@ class Questionnaire
         return $this;
     }
 
+    
+
+    
+
     /**
      * @return string|null
      */
     public function getCodePostal()
     {
-        return $this->CodePostal;
+        return $this->codePostal;
     }
 
     /**
-     * @param string|null $CodePostal
+     * @param string|null $codePostal
      *
      * @return self
      */
-    public function setCodePostal($CodePostal)
+    public function setCodePostal($codePostal)
     {
-        $this->CodePostal = $CodePostal;
+        $this->codePostal = $codePostal;
 
         return $this;
     }
@@ -442,19 +435,19 @@ class Questionnaire
     /**
      * @return string|null
      */
-    public function getVille()
+    public function getCommune()
     {
-        return $this->Ville;
+        return $this->commune;
     }
 
     /**
-     * @param string|null $Ville
+     * @param string|null $commune
      *
      * @return self
      */
-    public function setVille($Ville)
+    public function setCommune($commune)
     {
-        $this->Ville = $Ville;
+        $this->commune = $commune;
 
         return $this;
     }
