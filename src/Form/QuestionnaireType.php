@@ -9,6 +9,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+
 
 
 
@@ -32,16 +34,18 @@ class QuestionnaireType extends AbstractType
             ->add('code_postal', TextType::class, array('label' => "CP"))
             ->add('commune', TextType::class, array('label' => "Commune"))
             ->add('mail', EmailType::class, array('label' => "Adresse mail"))
-            ->add('quest1', ChoiceType::class, array(
-                'choices' => array(
-                       "Chambre de Commerce et d'Industrie (CCI)" => 'CCI',
-                      "Chambre des Métiers et de l'Artisanat (CMA)" => 'CMA',
-                      "Boutique de Gestion des Entreprises (BGE)" => 'BGE',
-                       "Association pour le Droit à l'Initiative Economique (ADIE)" => 'ADIE',
-                       "Autre(s) structure(s):" => '',
-                       "Aucune de ces structures" => 'aucune',
-                      ),
+            ->add('quest1', TextType::class, array(
+                //'choices' => array(
+                       //"Chambre de Commerce et d'Industrie (CCI)" => 'CCI',
+                      //"Chambre des Métiers et de l'Artisanat (CMA)" => 'CMA',
+                      //"Boutique de Gestion des Entreprises (BGE)" => 'BGE',
+                      //"Association pour le Droit à l'Initiative Economique (ADIE)" => 'ADIE',
+                       //"Autre(s) structure(s):" => '',
+                       //"Aucune de ces structures" => 'aucune',
+                      //),
                 'label' => "Avez-vous déjà rencontré l'une ou plusieurs des structures d'accompagnement suivantes?",
+                
+                
                      
                 ))
              
@@ -87,7 +91,7 @@ class QuestionnaireType extends AbstractType
                 'label' => "Pensez-vous obtenir un financement bancaire?"
             ))
 
-            ->add('comment', TextType::class, array('label' => "Commentaire"));
+            ->add('comment', TextareaType::class, array('label' => "Commentaire"));
             
     }
 
