@@ -49,28 +49,29 @@ class QuestionnaireType extends AbstractType
                      
                 ))
              
-            ->add('quest2', ChoiceType::class, array(
-                'choices' => array(
-                        'Agricole' => 'Agricole',
-                        'Libérale' => 'Libérale',
-                        'Artistique' => 'Artistique',
-                        'Industrie' => 'Industrie',
-                        'Artisanat' => 'Artisanat',
-                        'Commerce' => 'Commerce',
-                        'Service' => array(
-                             "Coiffure-Esthétique-Toilettage animaux" => "Coiffure-Esthétique-Toilettage animaux",
-                             "Réparations et installations en tout genre" => "Réparations et installations en tout genre",
-                             "Taxi-Ambulance-Déménagement" => "Taxi-Ambulance-Déménagement",
-                             "Photographe" => "Photographe",
-                             "Secrétariat-Administrartif" => "Secrétariat-Administrartif",
-                             "Nettoyage de locaux,Pressing,Ramonage" => "Nettoyage de locaux,Pressing,Ramonage",
-                             "Funéraires-Soins Mortuaires" => "Funéraires-Soins Mortuaires",
-                             "Autres services" =>"",
-                                  ),
-                        'Autre activité' => '',
-                        'Activité non encore définie' => 'Activité non encore définie',
-                      ),
-                'label' => "Votre projet de création ou de reprise d'entreprise porte sur quel secteur d'activité?"
+            ->add('quest2', TextType::class, array(
+                //'choices' => array(
+                        //'Agricole' => 'Agricole',
+                        //'Libérale' => 'Libérale',
+                        //'Artistique' => 'Artistique',
+                        //'Industrie' => 'Industrie',
+                        //'Artisanat' => 'Artisanat',
+                        //'Commerce' => 'Commerce',
+                        //'Service' => array(
+                             //"Coiffure-Esthétique-Toilettage animaux" => "Coiffure-Esthétique-Toilettage animaux",
+                             //"Réparations et installations en tout genre" => "Réparations et installations en tout genre",
+                             //"Taxi-Ambulance-Déménagement" => "Taxi-Ambulance-Déménagement",
+                             //"Photographe" => "Photographe",
+                             //"Secrétariat-Administrartif" => "Secrétariat-Administrartif",
+                             //"Nettoyage de locaux,Pressing,Ramonage" => "Nettoyage de locaux,Pressing,Ramonage",
+                             //"Funéraires-Soins Mortuaires" => "Funéraires-Soins Mortuaires",
+                             //"Autres services" =>"",
+                                  //),
+                        //'Autre activité' => '',
+                        //'Activité non encore définie' => 'Activité non encore définie',
+                      //),
+                'label' => "Votre projet de création ou de reprise d'entreprise porte sur quel secteur d'activité?",
+                'label_attr' => array('id' => 'activ')
                 ))
 
             ->add('quest3', ChoiceType::class, array( 
