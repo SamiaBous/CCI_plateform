@@ -44,7 +44,7 @@ class QuestionnaireType extends AbstractType
                        //"Aucune de ces structures" => 'aucune',
                       //),
                 'label' => "Avez-vous déjà rencontré l'une ou plusieurs des structures d'accompagnement suivantes?",
-                
+                'label_attr' => array('id' => 'struct')
                 
                      
                 ))

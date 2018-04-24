@@ -39,6 +39,7 @@ class Questionnaire
     /**
      * @var string|null
      *
+     * @Assert\NotBlank()
      * @ORM\Column(name="nom", type="string", length=25, nullable=true)
      */
     private $lastname;
@@ -46,6 +47,7 @@ class Questionnaire
     /**
      * @var string|null
      *
+     * @Assert\NotBlank()
      * @ORM\Column(name="prenom", type="string", length=25, nullable=true)
      */
     private $firstname;
@@ -53,6 +55,7 @@ class Questionnaire
     /**
      * @var string|null
      *
+     * @Assert\NotBlank()
      * @ORM\Column(name="telephone", type="string", length=16, nullable=true)
      */
     private $phone;
@@ -60,6 +63,7 @@ class Questionnaire
     /**
      * @var string|null
      *
+     * @Assert\NotBlank()
      * @ORM\Column(name="adresse", type="string", length=150, nullable=true)
      */
     private $address;
@@ -84,6 +88,7 @@ class Questionnaire
     /**
      * @var string|null
      *
+     * @Assert\NotBlank()
      * @ORM\Column(name="email", type="string", length=25, nullable=true)
      */
     private $mail;
@@ -91,6 +96,7 @@ class Questionnaire
     /**
      * @var string|null
      *
+     * @Assert\NotBlank()
      * @ORM\Column(name="question_1", type="string", length=255, nullable=true)
      */
     private $quest1;
@@ -98,6 +104,7 @@ class Questionnaire
     /**
      * @var string|null
      *
+     * @Assert\NotBlank()
      * @ORM\Column(name="question_2", type="string", length=255, nullable=true)
      */
     private $quest2;
@@ -105,6 +112,7 @@ class Questionnaire
     /**
      * @var string|null
      *
+     * @Assert\NotBlank()
      * @ORM\Column(name="question_3", type="string", length=255, nullable=true)
      */
     private $quest3;
@@ -112,13 +120,15 @@ class Questionnaire
     /**
      * @var string|null
      *
+     * @Assert\NotBlank()
      * @ORM\Column(name="question_4", type="string", length=255, nullable=true)
      */
     private $quest4;
 
     /**
      * @var string|null
-     *
+     * 
+     * @Assert\NotBlank()
      * @ORM\Column(name="commentaire", type="string", length=255, nullable=true)
      */
     private $comment;

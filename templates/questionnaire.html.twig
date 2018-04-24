@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 	<h1>Ceci est une Maryse à but non lucratif.</h1>
-	<div id="cadre_inscri">		
-		<div id="inscription">
-			<h2 class="titre_entree">Inscription</h2>
+			
+		
+			
 			<div id="form">
 				{{ form_start(form) }}
 				<div class="">
@@ -34,8 +34,8 @@
 					{{ form_row(form.mail, { attr: { 'label': '', 'class': 'une_classe' } }) }}		
 				</div>
 				<div class="">
-					{{ form_row(form.quest1, { attr: { 'label': '', 'class': 'une_classe', 'id':'' } }) }} 
-					<p>Avez-vous déjà rencontré l'une ou plusieurs des structures d'accompagnement suivantes? <b id='struct'></b> </p> 
+					{{ form_row(form.quest1, { attr: { 'label': '', 'class': '' } }) }} 
+					<!--<label>Avez-vous déjà rencontré l'une ou plusieurs des structures d'accompagnement suivantes? <b id='struct'></b> </label> -->
 					
 				</div>	
 			     	
@@ -55,79 +55,8 @@
 				<button class="btn_inscri" type="submit">Valider</button>
 				{{ form_end(form) }}
 			</div>			
-		</div>
-	</div>
+		
+	
 {% endblock %}
 
-{% block javascripts %}
-
-		<!--<script type="text/javascript">
-            function otherStruct(select) {
-                if(select.value == 'choix') {
-                    var choix = document.createElement('input');
-                    select.form.onsubmit = function() {
-                        var option = document.createElement('option');
-                        option.innerHTML = choix.value;
-                        option.value = choix.value.substring(0, 2);
-                        choix.parentNode.replaceChild(select, choix);
-                        select.insertBefore(option, select.firstChild);
-                        select.selectedIndex = 0;
-                    }
-                    select.parentNode.replaceChild(choix, select);
-                    
-                }
-            }
-
-        </script>-->
-        <!--<script type="text/javascript">
-
-			function changeText(){
-				var structures = new Array("CCI", "CMA", "BGE", "ADIE", "Autre(s) structure(s),préciser:", "Aucune");
-
-				document.getElementById('struct').innerText = structures;
-				document.getElementById("struct").innerText = structures.join(" ");
-		}
-    	</script>-->
-
-    	<!--<script type="text/javascript">
-
-
-
-			var arr = [
-			  {val : 1, text: 'CCI'},
-			  {val : 2, text: 'CMA'},
-			  {val : 3, text: 'BGE'},
-			  {val : 4, text: 'ADIE'},
-			  {val : 5, text: 'Autre(s) structure(s),préciser:'},
-			  {val : 6, text: 'Aucune'}
-			];
-
-			function choiceOption(){
-				document.getElementById('struct').innerHTML = new Array[
-			  {val : 1, text: 'CCI'},
-			  {val : 2, text: 'CMA'},
-			  {val : 3, text: 'BGE'},
-			  {val : 4, text: 'ADIE'},
-			  {val : 5, text: 'Autre(s) structure(s),préciser:'},
-			  {val : 6, text: 'Aucune'}
-			];
-			}
-
-			var sel = $('<select>').appendTo('body');
-			$(arr).each(function() {
-			 sel.append($("<option>").attr('value',this.val).text(this.text));
-			});
-
-
-
-    	</script>-->
-    	<!--<script
-			  src="https://code.jquery.com/jquery-3.3.1.js"
-			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-			  crossorigin="anonymous"></script>-->
-
-   	
-    	<script src="{{ asset('build/app.js') }}"></script>
-        
-{% endblock %}
 
