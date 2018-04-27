@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+            <h1 class="home" style="margin-top: 13%;">Entreprendre</h1>
+            <h2 class="home">en Haute Saône</h2>
+            <p class="home">Ici primo accueil des créateurs et repreneurs d'entreprise</p>
+            <p class="home">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel congue dolor. Integer maximus turpis ut nibh hendrerit <br>
+            imperdiet eget at orci. Duis vitae turpis urna. Aliquam maximus tempor erat sed interdum</p>
+
+            <div id="info">
+                {% block content %}
+                    <button class="home">ENTREZ</button>
+                    <div id="apropos" style="margin-left: 40px;">
+                        {% block content2 %}
+                            <h3>Qui Sommes Nous ?</h3>
+                        {% endblock content2 %}
+                    </div>
+                    <div id="arrow" onclick="myFunction2()">
+                        {% block content3 %}
+                            <img class="arrow" src="{{ asset('/images/downarrow.png') }}" alt="DownArrow"/>
+                        {% endblock content3 %}
+                    </div>
+                {% endblock content %}
+            </div>
+            <hr class="down">
+            <hr class="vl">
+            <hr class="vl2">
+            <a href="#" target=blank><img class="socialnetwork" src="{{ asset('/images/facebook.png') }}" alt="facebook"/></a>                
+            <a href="#" target=blank><img class="socialnetwork2" src="{{ asset('/images/twitter.png') }}" alt="twitter"/></a>
+            <div id="carre" class="home">
+                {% block content4 %}
+                {% endblock content4 %}
+            </div>
+            <div id="carre2">
+                {% block content5 %}
+                {% endblock content5 %}
+            </div>
+            <div id="carre3">
+                {% block content6 %}
+                {% endblock content6 %}
+            </div>
+            <div id="carre4" onclick="myFunction()">
+                {% block content7 %}
+                    <img id="admin" src="{{ asset('/images/img_325788.png') }}" alt="admin">
+                {% endblock content7 %}
+            </div>
+            {% block content11 %}
+            <ul id="home" class="navbar" style="margin-top: -357px;">
+                <li div="home"><a class="active" href="http://localhost/CCI_plateform/public/">Accueil</a></li>
+                <li div="home"><a href="#news">Formulaire</a></li>
+                <li div="home"><a href="#contact">Contact</a></li>
+                <li div="home"><a href="#about">A propos</a></li>
+            </ul>
+            {% endblock content11 %}
+            <div id="user">
+                {% block content8 %}
+                    <div id="form">
+                        {% block content9 %}
+                            <form action="action_page.php">
+
+                            <label for="fname">Login</label><br>
+                            <input type="text" id="fname" name="firstname" placeholder="Your login.."><br>
+
+                            <label for="lname">Password</label><br>
+                            <input type="text" id="lname" name="lastname" placeholder="Your password.."><br>
+
+                            <input type="submit" value="Connexion">
+
+                            </form>
+                        {% endblock content9 %}
+                    </div>
+                {% endblock content8 %}
+            </div>
+            <div id="test">
+                {% block content10 %}
+                    <h4>Organismes</h4>
+                        <a href="#"><img class="Orga" src="{{ asset('/images/Logo-ADIE.png') }}" alt="ADIE"/></a>
+                        <a href="#"><img class="Orga" src="{{ asset('/images/logo_BGE.png') }}" alt="BGE"></a>
+                        <a href="#"><img class="Orga" src="{{ asset('/images/Logo_CCI.png') }}" alt="CCI"></a>
+                        <a href="#"><img class="Orga CMA" src="{{ asset('Logo_CMA.png') }}" alt="CMA"></a>
+                            <input type="submit" value="En savoir plus" style="margin-top: 10px;">
+                {% endblock content10 %}
+            </div>
+    {% block javascripts %}
+        <script src="{{ asset('js/app.js') }}"></script>
+    {% endblock javascripts %}
+{% endblock body %}

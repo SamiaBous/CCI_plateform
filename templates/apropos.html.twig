@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% block content %}
+    <ul class="about">
+        <li><a class="active" href="http://localhost/CCI_plateform/public/">Accueil</a></li>
+        <li><a href="#news">Formulaire</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">A propos</a></li>
+    </ul>
+
+    <div id="info">
+        <div id="about">
+                <h1 style="text-align: center; font-size: 64px;">A propos</h1>
+                <h2 style="font-size: 58px;">Créer votre entreprise en Haute Saône</h2>
+        </div>
+    </div>
+
+    <div id="mentionslegales">
+        <h3 class="ml">Mentions Légales</h3>
+        <p style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel congue dolor. Integer maximus turpis ut nibh hendrerit <br>
+            imperdiet eget at orci. Duis vitae turpis urna. Aliquam maximus tempor erat sed interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Quisque vel congue dolor. <br> Integer maximus turpis ut nibh hendrerit imperdiet eget at orci. Duis vitae turpis urna. Aliquam maximus tempor erat sed interdum
+            </p>
+    </div>
+
+    <div id="content">
+    <h3 class="ml">Communautés de Communes</h3>
+        <div id="grand_cadre">
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/agglomeration-vesoul-b56f24-350x350-ratio-80.jpg') }}" alt="agglo_1"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-4-rivieres-c6ffe8-350x350-ratio-80.jpg') }}" alt="agglo_2"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/CC-des-combes-c97ed5-350x350-ratio-80.jpg') }}" alt="agglo_3"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-haute-comte-d24774-350x350-ratio-80.jpg') }}" alt="agglo_4"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-haute-vallee-de-l-ognon-3cccea-350x350-ratio-80.jpg') }}" alt="agglo_4"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-hauts-du-val-de-saone-4a1e09-350x350-ratio-80.jpg') }}" alt="agglo_5"></a>
+            </div>
+        </div>
+        <br>
+        <div id="grand_cadre">
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-monts-de-gy-3c55fd-350x350-ratio-80.jpg') }}" alt="agglo_6"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-pays-de-lure-06b088-350x350-ratio-80.jpg') }}" alt="agglo_7"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-pays-de-luxeuil-788836-350x350-ratio-80.jpg') }}" alt="agglo_8"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-pays-de-villersexel-b33c72-350x350-ratio-80.jpg') }}" alt="agglo_9"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-pays-hericourt-0aa742-350x350-ratio-80.jpg') }}" alt="agglo_10"></a>
+            </div>
+        </div>
+        <br>
+        <div id="grand_cadre">
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-pays-riolais-50ae80-350x350-ratio-80.jpg') }}" alt="agglo_11"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/agglomeration-vesoul-b56f24-350x350-ratio-80.jpg') }}" alt="agglo_12"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-rahin-cherimont-2fc28c-350x350-ratio-80.jpg') }}" alt="agglo_13"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-terres-de-saone-c374ac-350x350-ratio-80.jpg') }}" alt="agglo_14"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-triangle-vert-42fc30-350x350-ratio-80.jpg') }}" alt="agglo_15"></a>
+            </div>
+        </div>
+        <br>
+        <div id="grand_cadre">
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-val-marnaysien-c5e680-350x350-ratio-80.jpg') }}" alt="agglo_16"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-vannier-amance-a3944d-350x350-ratio-80.jpg') }}" alt="agglo_17"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-pays-montbozon-chanois-024a08-350x350-ratio-80.jpg') }}" alt="agglo_18"></a>
+            </div>
+            <div id="carre">
+                <a href="#"><img class="image" src="{{ asset('/images/cc-val-de-gray-ec350d-350x350-ratio-80.jpg') }}" alt="agglo_19"></a>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+{% endblock body %}

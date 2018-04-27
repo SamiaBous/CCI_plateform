@@ -1,17 +1,14 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-	<h1>Ceci est une Maryse à but non lucratif.</h1>
-			
-		
-			
+	<h1 class="formu">Formulaire d'inscription</h1>
 			<div id="form">
 				{{ form_start(form) }}
 				<div class="">
 					{{ form_row(form.factSite, { attr: { 'label': '', 'class': 'une_classe' } }) }}
 				</div>
-				<div class=>
+				<div class="">
 					{{ form_row(form.civilite, { attr: { 'label': '', 'class': 'une_classe' } }) }}
-				</div>	
+				</div>
 				<div class="">
 					{{ form_row(form.lastname, { attr: { 'label': '', 'class': 'une_classe' } }) }}				
 				</div>
@@ -50,9 +47,7 @@
 				</div>
 				<button class="btn_inscri" type="submit">Valider</button>
 				{{ form_end(form) }}
-			</div>			
-		
-	
+			</div>
 {% endblock %}
 
 
