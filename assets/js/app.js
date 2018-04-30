@@ -94,6 +94,7 @@
 					    	$('#questionnaire_quest2').hide("fast");
 						 
 				});
+<<<<<<< HEAD
 		    });
 
     	
@@ -152,4 +153,6 @@
 					    	$('#questionnaire_service').hide("fast");
 						 
 				});
+=======
+>>>>>>> 8a9e0cc2b55705696047f098ab2e8e7fad00a4b2
 		    });

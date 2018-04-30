@@ -1,17 +1,27 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+<<<<<<< HEAD
 	<h1>CCI_Platform</h1>
 			
 		
 			
+=======
+	<h1 class="formu">Formulaire d'inscription</h1>
+>>>>>>> 8a9e0cc2b55705696047f098ab2e8e7fad00a4b2
 			<div id="form">
 				{{ form_start(form) }} 
 				<div class="">
 					{{ form_row(form.factSite, { attr: { 'label': '', 'class': '' } }) }}
 				</div>
+<<<<<<< HEAD
 				<div class=>
 					{{ form_row(form.civilite, { attr: { 'label': '', 'class': '' } }) }}
 				</div>	
+=======
+				<div class="">
+					{{ form_row(form.civilite, { attr: { 'label': '', 'class': 'une_classe' } }) }}
+				</div>
+>>>>>>> 8a9e0cc2b55705696047f098ab2e8e7fad00a4b2
 				<div class="">
 					{{ form_row(form.lastname, { attr: { 'label': '', 'class': '' } }) }}				
 				</div>
@@ -57,9 +67,7 @@
 					
 				<button type="submit" class="btn_upload">Importer</button>
 				{{ form_end(form) }}
-			</div>			
-		
-	
+			</div>
 {% endblock %}
 
 

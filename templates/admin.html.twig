@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+        <ul class="topnav admin">
+            <li><a class="active" href="admin.html">ADMIN</a></li>
+            <li class="right"><a href="#...">...</a></li>
+            <li class="right"><a href="register.html.twig">Creer un compte</a></li>
+        </ul>
+
+        <div id="nav-icon2" class="admin">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div id="menu" class="admin">
+            <ul>
+                <li id="Statistiques"><a href="#Stats">Stats</a></li>
+                <li><a class="active" href="#Fiches">Fiches</a></li>
+                <li><a href="#Autres">Autres</a></li>
+                <li><a class="active" href="#Autres">Autres</a></li>
+            </ul>
+            
+        </div>
+
+        <div id="graphiques" class="admin">
+            <div id="stats">
+                <canvas id="myChart" width="200" height="100"></canvas>
+            </div>
+            <div id="stats2" class="admin">
+                <canvas id="myChart2" width="200" height="100"></canvas>
+            </div>
+        </div>
+{% endblock body %}
