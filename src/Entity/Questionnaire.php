@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 
 
 /**
@@ -109,6 +109,14 @@ class Questionnaire
      */
     private $quest2;
 
+     /**
+     * @var string|null
+     *
+     * @Assert\NotBlank()
+     * @ORM\Column(name="service", type="string", length=255, nullable=true)
+     */
+    private $service;
+
     /**
      * @var string|null
      *
@@ -116,6 +124,8 @@ class Questionnaire
      * @ORM\Column(name="question_3", type="string", length=255, nullable=true)
      */
     private $quest3;
+
+   
 
     /**
      * @var string|null
@@ -127,8 +137,7 @@ class Questionnaire
 
     /**
      * @var string|null
-     * 
-     * @Assert\NotBlank()
+     *
      * @ORM\Column(name="commentaire", type="string", length=255, nullable=true)
      */
     private $comment;
@@ -422,25 +431,7 @@ class Questionnaire
         return $this;
     }
 
-    /**
-     * @return \App\Entity\AutoCompletionCPVille
-     */
-    public function getIdEpci()
-    {
-        return $this->idEpci;
-    }
-
-    /**
-     * @param \App\Entity\AutoCompletionCPVille $idEpci
-     *
-     * @return self
-     */
-    public function setIdEpci(\App\Entity\AutoCompletionCPVille $idEpci)
-    {
-        $this->idEpci = $idEpci;
-
-        return $this;
-    }
+    
 
     /**
      * @return string|null
@@ -461,4 +452,28 @@ class Questionnaire
 
         return $this;
     }
+
+    
+    
+
+    /**
+     * @return string|null
+     */
+    public function getService()
+    {
+        return $this->service;
+    }
+
+    /**
+     * @param string|null $service
+     *
+     * @return self
+     */
+    public function setService($service)
+    {
+        $this->service = $service;
+
+        return $this;
+    }
 }
+

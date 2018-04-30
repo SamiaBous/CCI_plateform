@@ -1,6 +1,7 @@
 <?php
 // src/Controller/RegistrationController.php
 namespace App\Controller;
+
 use App\Form\UserType;
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -8,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Flex\Response;
+
 
 
 class RegistrationController extends Controller
@@ -33,9 +35,10 @@ class RegistrationController extends Controller
         // 1) build the form
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
-        //dump($request);
+        
         // 2) handle the submit (will only happen on POST)
         $form->handleRequest($request);
+        dump($request);
         if ($form->isSubmitted() && $form->isValid()) {
             // 3) Encode the password (you could also do this via Doctrine listener)
             $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
