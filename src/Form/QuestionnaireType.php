@@ -49,7 +49,7 @@ class QuestionnaireType extends AbstractType
 
             ->add('service', TextType::class, array(
                 //'mapped' => false,
-                'required' => false,
+                //'required' => false,
                 'label' => "Veuillez préciser",
                 'label_attr' => array('id' => 'serv')
                 ))
