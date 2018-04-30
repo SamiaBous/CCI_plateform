@@ -47,9 +47,9 @@ class QuestionnaireType extends AbstractType
                 'label_attr' => array('id' => 'activ')
                 ))
 
-            ->add('service', TextType::class, array(
-                //'mapped' => false,
-                //'required' => false,
+            ->add('service', HiddenType::class, array(
+                'mapped' => false,
+                'required' => false,
                 'label' => "Veuillez préciser",
                 'label_attr' => array('id' => 'serv')
                 ))
