@@ -39,8 +39,6 @@
                                     {
                                         objData = { commune: request.term };
                                     }
-
-
                                     $.ajax({
                                     url: "question",
                                     dataType: "json",
@@ -50,7 +48,6 @@
                                     {
                                         response($.map(data, function (item)
                                         {
-
                                             return {
                                                 label: item.CodePostal + ", " + item.Commune,
                                                 value: function (){
@@ -70,7 +67,6 @@
                                         }));
                                     }
                                 });
-
                             },
                             minLength: 3, // on indique qu'il faut taper au moins 3 caractères pour afficher l'autocomplétion
                             delay: 600

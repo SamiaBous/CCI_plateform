@@ -16,7 +16,7 @@
                     </div>
                     <div id="arrow" onclick="myFunction2()">
                         {% block content3 %}
-                            <img class="arrow" src="{{ asset('/images/downarrow.png') }}" alt="DownArrow"/>
+                            <img class="arrow" src="{{ asset('/images/downarrowyellow.png') }}" alt="DownArrow" title="Cliquez ici"/>
                         {% endblock content3 %}
                     </div>
                 {% endblock content %}
@@ -24,8 +24,8 @@
             <hr class="down">
             <hr class="vl">
             <hr class="vl2">
-            <a href="#" target=blank><img class="socialnetwork" src="{{ asset('/images/facebook.png') }}" alt="facebook"/></a>                
-            <a href="#" target=blank><img class="socialnetwork2" src="{{ asset('/images/twitter.png') }}" alt="twitter"/></a>
+            <!--<a href="#" target=blank><img class="socialnetwork" src="{{ asset('/images/facebook.png') }}" alt="facebook"/></a>                
+            <a href="#" target=blank><img class="socialnetwork2" src="{{ asset('/images/twitter.png') }}" alt="twitter"/></a>-->
             <div id="carre" class="home">
                 {% block content4 %}
                 {% endblock content4 %}
@@ -44,7 +44,7 @@
                 {% endblock content7 %}
             </div>
             {% block content11 %}
-            <ul id="home" class="navbar" style="margin-top: -357px;">
+            <ul id="home" class="navbar" style="margin-top: -371px;">
                 <li div="home"><a class="active" href="http://localhost/CCI_plateform/public/">Accueil</a></li>
                 <li div="home"><a href="#news">Formulaire</a></li>
                 <li div="home"><a href="#contact">Contact</a></li>
@@ -53,7 +53,7 @@
             {% endblock content11 %}
             <div id="user">
                 {% block content8 %}
-                    <div id="form">
+                    <div id="form_contact">
                         {% block content9 %}
                             <form action="action_page.php">
 
@@ -76,9 +76,14 @@
                         <a href="#"><img class="Orga" src="{{ asset('/images/Logo-ADIE.png') }}" alt="ADIE"/></a>
                         <a href="#"><img class="Orga" src="{{ asset('/images/logo_BGE.png') }}" alt="BGE"></a>
                         <a href="#"><img class="Orga" src="{{ asset('/images/Logo_CCI.png') }}" alt="CCI"></a>
-                        <a href="#"><img class="Orga CMA" src="{{ asset('Logo_CMA.png') }}" alt="CMA"></a>
+                        <a href="#"><img class="Orga CMA" src="{{ asset('/images/Logo_CMA.png') }}" alt="CMA"></a>
                             <input type="submit" value="En savoir plus" style="margin-top: 10px;">
                 {% endblock content10 %}
+            </div>
+            <div>
+                {% block content12 %}
+                    <img src="{{ asset('images/Totemcréateursentreprises.png') }}" alt="Logo_platform" title="Logo_platform">
+                {% endblock content12 %}
             </div>
     {% block javascripts %}
         <script src="{{ asset('js/app.js') }}"></script>

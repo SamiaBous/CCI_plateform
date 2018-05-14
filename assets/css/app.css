@@ -9,9 +9,11 @@
 }
 
 body {
-    background-color: #13a89e;
+    background-image: url("/images/img-3Blue.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    color: black;
+    color: #303030;
 }
 
 /*----------Fin Style Css Universel----------*/
@@ -80,9 +82,9 @@ button.home:hover {
 }
 
 .down {
-    width: 80%;
+    width: 95%;
     height: 2px;
-    background-color:  #f7941e;
+    background-color: #f7941e;
     border: none;
     margin-top: 10%;
 }
@@ -97,8 +99,8 @@ button.home:hover {
 }
 
 .vl2 {
-    border-left: 2px solid  #f7941e;
-    height: 300px;
+    border-left: 2px solid #f7941e;
+    height: 315px;
     margin-left: 95%;
     border-top: none;
     margin-top: 15%;
@@ -152,7 +154,7 @@ ul#home {
     background-color: #f7941e;
     color: black;
     margin-left: 1815px;
-    margin-top: -21%;
+    margin-top: -19%;
 }
 
 #carre2{
@@ -198,14 +200,15 @@ ul#home {
 
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
-    width: 40%; /* Full width */
+     /* width: 40%; Full width */
     padding: 12px; /* Some padding */
-    /*border: 1px solid #ccc;  Gray border */
-    /*border-radius: 4px; /* Rounded borders */
+    /*border: 2px solid #f7941e; yellow border*/
+    border-radius: 20px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
     margin-top: 6px; /* Add a top margin */
     margin-bottom: 4px; /* Bottom margin */
     resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+
 }
 
 input[type=submit] {
@@ -222,10 +225,6 @@ input[type=submit]:hover {
     background-color: white;
     color: black;
     cursor: pointer;
-}
-
-form {
-    padding-top: 5px;
 }
 
 label {
@@ -265,18 +264,23 @@ h4 {
 
 h1.formu {
     text-align: center;
-    color: #f7941e;
+    color: #303030;
+    margin-top: 3%;
 }
 
 select, input, textarea {
     margin-left: 1%;
 }
 
-#form {
+.questions select {
+    border: 2px solid #f7941e;
+}
+
+#formulaire {
     width: 80%;
-    margin-left: 10%;
-    text-align: center;
-    color: #f7941e;
+    color: #303030;
+    margin-left: 27%;
+    width: 50%;
 }
 
 button.btn_inscri{
@@ -287,27 +291,138 @@ button.btn_inscri{
     text-align: center;
     text-decoration: none;
     font-size: 16px;
+    border-radius: 20px;
 }
 
 button.btn_inscri:hover {
     background-color: #f7941e;
     color: black;
-   border: solid 1px  #f7941e;
+    border: solid 1px  #f7941e;
+    border-radius: 20px;
+}
+
+#questionnaire_factSite {
+    width: 24%;
+}
+
+#questionnaire_civilite {
+    width: 20%;
+    border-radius: 20px;
+    border: solid 2px #f7941e;
+}
+
+#questionnaire_lastname {
+    width: 20%;
+}
+
+#questionnaire_firstname {
+    width: 20%;
+}
+
+#questionnaire_phone {
+    width: 20%;
+}
+
+#questionnaire_address {
+    width: 24%;
+}
+
+#questionnaire_code_postal {
+    width: 14%;
+}
+
+#questionnaire_commune {
+    width: 24%;
+}
+
+#questionnaire_mail {
+    width: 24%;
+    height: 30px;
+    border: solid 2px #f7941e;
+}
+
+#questionnaire_quest1, #questionnaire_quest2 {
+    width: 24%;
+}
+
+#questionnaire_quest3, #questionnaire_quest4 {
+    width: 10%;
+    border-radius: 20px;
+    border: solid 2px #f7941e;
+}
+
+#questionnaire_comment {
+    width: 60%;
+    height: 60px;
+    border: solid 2px #f7941e;
 }
 
 #questionnaire_factSite, #questionnaire_lastname, #questionnaire_firstname, #questionnaire_phone, #questionnaire_address, 
 #questionnaire_code_postal, #questionnaire_commune, #questionnaire_mail, #questionnaire_quest1, #questionnaire_quest2,
 #questionnaire_comment, #questionnaire__token {
     border-radius: 20px;
+    border: 2px solid #f7941e;
 }
 
-#questionnaire_mail {
-    height: 30px;
+.haut {
+    border: solid 2px #f7941e;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
-#questionnaire_comment {
-    height: 60px;
-    width: 50%;
+.bas {
+    border: solid 2px #f7941e;
+    margin-top: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.case_commentaire {
+    border: solid 2px #f7941e;
+    margin-top: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 102px;
+}
+
+.factSite {
+    margin-left: 25%;
+}
+
+.questions {
+    margin-left: 100px;
+}
+
+.civilite {
+    margin-left: 398px;
+}
+
+.lastname {
+    margin-left: 410px;
+}
+
+.firstname {
+    margin-left: 386px;
+}
+
+.phone {
+    margin-left: 252px;
+}
+
+.address {
+    margin-left: 322px;
+}
+
+.code_postal {
+    margin-left: 434px;
+}
+
+.commune {
+    margin-left: 370px;
+}
+
+.mail {
+    margin-left: 350px;
 }
 
 /*----------Fin du Style Css----------*/
@@ -435,8 +550,6 @@ button.btn_inscri:hover {
     align-items: center;
     padding: 15px;
     position: relative;
-    /*background-color: #f2f2f2;*/
-    background-color:#13a89e;
   }
   
   .wrap-contact100 {
@@ -450,13 +563,14 @@ button.btn_inscri:hover {
   
   .contact100-form {
     width: 100%;
+    margin-top: 14%;
   }
   
   .contact100-form-title {
     display: block;
     font-family: Ubuntu-Bold;
     font-size: 30px;
-    color: #f7941e;
+    color: #303030;
     line-height: 1.2;
     text-transform: uppercase;
     text-align: center;
@@ -559,7 +673,7 @@ button.btn_inscri:hover {
   
     font-family: Ubuntu-Bold;
     font-size: 16px;
-    color: #fff;
+    color: #303030;
     line-height: 1.2;
     text-transform: uppercase;
   
@@ -739,7 +853,6 @@ h2.about {
 
 #content {
     margin-top: 2%;
-    margin-left: 0%;
 }
 
 #haut {
@@ -768,7 +881,6 @@ ul.topnav.admin {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #13a89e;
 }
 
 ul.topnav.admin li {
@@ -1011,15 +1123,106 @@ ul.topnav.admin li.right {
 
 h1.register {
     text-align: center;
-    margin-top: 14%;
+    margin-top: 12%;
+}
+
+#form_inscri {
+    text-align: center;
+}
+
+.div_mail {
+    margin-left: 22px;
+}
+
+.div_mdp {
+    margin-left: -42px;
+}
+
+.div_mdp2 {
+    margin-left: -124px;
 }
 
 h2.titre_entree {
     text-align: center;
 }
 
-#cadre_inscri {
-    margin-top: 2%;
+button.btn_inscri {
+    border: solid 1px black;
+    background: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+button.btn_inscri:hover {
+    background-color: #f7941e;
+    color: black;
+    border: solid 1px  #f7941e;
+}
+
+/*----------Fin du Style Css----------*/
+
+/*****************************************************************[LOGIN]*************************************************************/
+
+/*----------Début du Style Css----------*/
+
+h1.login {
+    text-align: center;
+}
+
+button.btn_connex {
+    border: solid 1px black;
+    background: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+#username {
+    width: 22%;
+    border: 2px solid #f7941e;
+}
+
+#user_username {
+    border: 2px solid #f7941e;
+}
+
+#user_email {
+    border: 2px solid #f7941e;
+    border-radius: 20px;
+}
+
+#user_plainPassword_first {
+    border: 2px solid #f7941e;
+    border-radius: 20px;
+}
+
+#user_plainPassword_second {
+    border: 2px solid #f7941e;
+    border-radius: 20px;
+}
+
+#connexion {
+    text-align: center;
+}
+
+button.btn_connex:hover {
+    background-color: #f7941e;
+    color: black;
+    border: solid 1px  #f7941e;
+}
+
+#password {
+    border: solid 2px #f7941e;
+    border-radius: 20px;
+    padding: 12px;
+    width: 20%;
+    margin-left: 3%;
 }
 
 /*----------Fin du Style Css----------*/
