@@ -5,6 +5,8 @@ namespace App\Repository;
 use App\Entity\Questionnaire;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\ORM\Query\ResultSetMappingBuilder;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * @method Query|null find($id, $lockMode = null, $lockVersion = null)
@@ -30,6 +32,6 @@ class QuestionnaireRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+    */    
 }
 ?>
