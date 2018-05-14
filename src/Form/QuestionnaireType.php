@@ -88,7 +88,7 @@ class QuestionnaireType extends AbstractType
 
             ->add('agreeTerms', CheckboxType::class, array('mapped' => false,
                                                          'label' => "J'accepte les termes..."
-            ))
+            ));
             //->add('save', SubmitType::class, array('label' => "Envoyer"));
 
 

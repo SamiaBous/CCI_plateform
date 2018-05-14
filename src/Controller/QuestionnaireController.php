@@ -89,7 +89,7 @@ class QuestionnaireController extends Controller
 
         return $stmt->getResult();
 
-        return new JsonResponse($stmt);
+        /*return new JsonResponse($stmt);
 
         // if you know the data to send when creating the response
         $response = new JsonResponse(array('data' => 123));
@@ -101,7 +101,7 @@ class QuestionnaireController extends Controller
 
         // if the data to send is already encoded in JSON
         $response = JsonResponse::fromJsonString('{ "data": 123 }');
-                use Symfony\Component\HttpFoundation\JsonResponse;
+                use Symfony\Component\HttpFoundation\JsonResponse;*/
 
         
     }
