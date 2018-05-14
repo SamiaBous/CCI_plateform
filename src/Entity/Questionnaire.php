@@ -24,6 +24,14 @@ class Questionnaire
      * @var string|null
      * 
      * @Assert\NotBlank()
+     * @ORM\Column(name="date", type="datetime",  nullable=true)
+     */
+    private $date;
+
+    /**
+     * @var string|null
+     * 
+     * @Assert\NotBlank()
      * @ORM\Column(name="sexe", type="string", length=25, nullable=true)
      */
     private $civilite;
@@ -474,6 +482,33 @@ class Questionnaire
         $this->service = $service;
 
         return $this;
+    }
+
+    
+
+    /**
+     * @return string|null
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param string|null $date
+     *
+     * @return self
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    public function __construct()
+    {
+        $this->date = new \DateTime('now');
     }
 }
 

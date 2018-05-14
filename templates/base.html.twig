@@ -5,22 +5,80 @@
         <title>Créer votre entreprise en Haute Saône</title>
         {% block stylesheets %}
          <link href="{{ asset('build/app.css') }}" rel="stylesheet" />
-         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"> 
+         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+         <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
         {% endblock %}
     </head>
     
     <body>
         <header>
-            <div id="logo"><a href="{{path('login')}}">Créer votre entreprise en Haute Saône</a></div>        
-            <a href="{{ path('logout') }}"><input class="btn_deco" type="button" value="Déconnexion"></a>
+            <!--<div id="logo"><a href="{{path(login)}}">Créer votre entreprise en Haute Saône</a></div>      
+            <a href="{{ path(logout) }}"><input class="btn_deco" type="button" value="Déconnexion"></a>-->
         </header>
         {% block body %}{% endblock %}
         {% block javascripts %}    	
-        <!--<script src="https://code.jquery.com/jquery-3.3.1.js"
-                integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-                crossorigin="anonymous"></script>-->
+            <script src="https://code.jquery.com/jquery-3.3.1.js"
+                    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+                    crossorigin="anonymous"></script>
 
-        <script src="{{ asset('build/app.js') }}"></script>
+            <script src="{{ asset('build/app.js') }}"></script>
+            <script
+              src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+              integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+              crossorigin="anonymous"></script>
+            <script>
+                $(document).ready(function(){
+                    
+                        $("#questionnaire_codePostal, #questionnaire_commune").autocomplete({
+                            source: function (request, response)// les deux arguments représentent les données nécessaires au plugin
+                            {
+                                    var objData = {};
+                                    if ($(this.element).attr('id') == 'questionnaire_codePostal')
+                                    {
+                                        objData = { codePostal: request.term };
+                                    }
+                                    else
+                                    {
+                                        objData = { commune: request.term };
+                                    }
+
+
+                                    $.ajax({
+                                    url: "question",
+                                    dataType: "json",
+                                    data: objData,
+                                    type: 'POST',
+                                    success: function (data)
+                                    {
+                                        response($.map(data, function (item)
+                                        {
+
+                                            return {
+                                                label: item.CodePostal + ", " + item.Commune,
+                                                value: function (){
+                                                
+                                                    if ($(this).attr('id') == 'questionnaire_codePostal')
+                                                    {
+                                                        $('#questionnaire_commune').val(item.Commune);
+                                                        return item.CodePostal;
+                                                    }
+                                                    else
+                                                    {
+                                                        $('#questionnaire_codePostal').val(item.CodePostal);
+                                                        return item.Commune;
+                                                    }
+                                                }
+                                            }
+                                        }));
+                                    }
+                                });
+
+                            },
+                            minLength: 3, // on indique qu'il faut taper au moins 3 caractères pour afficher l'autocomplétion
+                            delay: 600
+                        });
+                    });
+            </script>
 
         {% endblock %}
     </body>

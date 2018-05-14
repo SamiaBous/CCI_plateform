@@ -1,67 +1,68 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-
-	<h1>CCI_Platform</h1>
 			
 	<h1 class="formu">Formulaire d'inscription</h1>
 
-			<div id="form">
-				{{ form_start(form) }} 
-				<div class="">
-					{{ form_row(form.factSite, { attr: { 'label': '', 'class': '' } }) }}
-				</div>
+			 <div id="formulaire">
+				{{ form_start(form) }}
+				<div class="haut">
+					<div class="">
+						{{ form_row(form.date, { attr: { 'label': '', 'class': '' } }) }}
+					</div> 
+					<div class="factSite">
+						{{ form_row(form.factSite, { attr: { 'label': '', 'class': '' } }) }}
+					</div>
 
-				<div class=>
-					{{ form_row(form.civilite, { attr: { 'label': '', 'class': '' } }) }}
+					<div class="civilite">
+						{{ form_row(form.civilite, { attr: { 'label': '', 'class': '' } }) }}
+					</div>
 
-				<div class="">
-					{{ form_row(form.civilite, { attr: { 'label': '', 'class': 'une_classe' } }) }}
+					<div class="lastname">
+						{{ form_row(form.lastname, { attr: { 'label': '', 'class': '' } }) }}		
+					</div>
+					<div class="firstname">
+						{{ form_row(form.firstname, { attr: { 'label': '', 'class': '' } }) }}		
+					</div>
+					<div class="phone">
+						{{ form_row(form.phone, { attr: { 'label': '', 'class': '' } }) }}		
+					</div>
+					<div class="address">
+						{{ form_row(form.address, { attr: { 'label': '', 'class': '' } }) }}		
+					</div>
+					<div class="code_postal">
+						{{ form_row(form.codePostal, { attr: { 'label': '', 'class': '' } }) }}		
+					</div>
+					<div class="commune">
+						{{ form_row(form.commune, { attr: { 'label': '', 'class': '' } }) }}		
+					</div>
+					<div class="mail">
+						{{ form_row(form.mail, { attr: { 'label': '', 'class': '' } }) }}		
+					</div>
 				</div>
-
-				<div class="">
-					{{ form_row(form.lastname, { attr: { 'label': '', 'class': '' } }) }}				
+				<div class="bas">
+					<div class="questions">
+						{{ form_row(form.quest1, { attr: { 'label': '', 'class': '' } }) }}
+					</div>	
+					<div class="questions">
+						{{ form_row(form.quest2, { attr: { 'label': '', 'class': '' } }) }}		
+					</div>
+					<div class="questions">
+						{{ form_row(form.service, { attr: { 'label': '', 'class': '' } }) }}		
+					</div>
+					<div class="questions">
+						{{ form_row(form.quest3, { attr: { 'label': '', 'class': '' } }) }}		
+					</div>
+					<div class="questions">
+						{{ form_row(form.quest4, { attr: { 'label': '', 'class': '' } }) }}		
+					</div>
 				</div>
-				<div class="">
-					{{ form_row(form.firstname, { attr: { 'label': '', 'class': '' } }) }}		
-				</div>
-				<div class="">
-					{{ form_row(form.phone, { attr: { 'label': '', 'class': '' } }) }}		
-				</div>
-				<div class="">
-					{{ form_row(form.address, { attr: { 'label': '', 'class': '' } }) }}		
-				</div>
-				<div class="">
-					{{ form_row(form.codePostal, { attr: { 'label': '', 'class': '' } }) }}		
-				</div>
-				<div class="">
-					{{ form_row(form.commune, { attr: { 'label': '', 'class': '' } }) }}		
-				</div>
-				<div class="">
-					{{ form_row(form.mail, { attr: { 'label': '', 'class': '' } }) }}		
-				</div>
-				<div class="">
-					{{ form_row(form.quest1, { attr: { 'label': '', 'class': '' } }) }}
-				</div>	
-				<div class="">
-					{{ form_row(form.quest2, { attr: { 'label': '', 'class': '' } }) }}		
-				</div>
-				<div class="">
-					{{ form_row(form.service, { attr: { 'label': '', 'class': '' } }) }}		
-				</div>
-				<div class="">
-					{{ form_row(form.quest3, { attr: { 'label': '', 'class': '' } }) }}		
-				</div>
-				<div class="">
-					{{ form_row(form.quest4, { attr: { 'label': '', 'class': '' } }) }}		
-				</div>
-				<div class="">
-					{{ form_row(form.comment, { attr: { 'label': '', 'class': '' } }) }}		
-				</div>
-				<div class="">
-					{{ form_row(form.agreeTerms, { attr: { 'label': '', 'class': '' } }) }}		
-				</div>
-					
-				<button type="submit" class="btn_upload">Importer</button>
+					<div class="case_commentaire">
+						{{ form_row(form.comment, { attr: { 'label': '', 'class': '' } }) }}		
+					</div>
+					<div class="">
+						{{ form_row(form.agreeTerms, { attr: { 'label': '', 'class': '' } }) }}		
+					</div>
+					<button class="btn_inscri" style="margin-top: 2%;" type="submit">Envoyer</button>
 				{{ form_end(form) }}
 			</div>
 {% endblock %}
