@@ -5709,10 +5709,17 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
+<<<<<<< HEAD
+  Exit code: 3221225786
+  Command: C:\WINDOWS\system32\cmd.exe
+  Arguments: /d /s /c D:\Users\Stagiaire\Desktop\CCI_plateform\node_modules\.bin\encore dev --watch
+  Directory: D:\Users\Stagiaire\Desktop\CCI_plateform
+=======
   Exit code: 1
   Command: C:\WINDOWS\system32\cmd.exe
   Arguments: /d /s /c "D:\Users\Stagiaire\Desktop\Nouveau dossier\CCI_plateform\node_modules\.bin\encore" dev --watch
   Directory: D:\Users\Stagiaire\Desktop\Nouveau dossier\CCI_plateform
+>>>>>>> 8a9e0cc2b55705696047f098ab2e8e7fad00a4b2
   Output:
   
       at ProcessTermError.MessageError (C:\Program Files (x86)\Yarn\lib\cli.js:186:110)
