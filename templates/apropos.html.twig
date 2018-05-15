@@ -2,10 +2,10 @@
 {% block body %}
     {% block content %}
     <ul class="about">
-        <li><a class="active" href="http://localhost/CCI_plateform/public/">Accueil</a></li>
-        <li><a href="#news">Formulaire</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">A propos</a></li>
+        <li><a class="active" href="{{path('home')}}">Accueil</a></li>
+        <li><a href="{{path('questionnaire')}}">Formulaire</a></li>
+        <li><a href="{{path('contact')}}">Contact</a></li>
+        <li><a href="{{path('Apropos')}}">A propos</a></li>
     </ul>
 
     <div id="info">

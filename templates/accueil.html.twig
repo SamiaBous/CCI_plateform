@@ -8,7 +8,7 @@
 
             <div id="info">
                 {% block content %}
-                    <button class="home">ENTREZ</button>
+                    <a href="{{path('questionnaire')}}"><button class="home" >ENTREZ</button></a>
                     <div id="apropos" style="margin-left: 40px;">
                         {% block content2 %}
                             <h3>Qui Sommes Nous ?</h3>
@@ -45,10 +45,10 @@
             </div>
             {% block content11 %}
             <ul id="home" class="navbar" style="margin-top: -371px;">
-                <li div="home"><a class="active" href="http://localhost/CCI_plateform/public/">Accueil</a></li>
-                <li div="home"><a href="#news">Formulaire</a></li>
-                <li div="home"><a href="#contact">Contact</a></li>
-                <li div="home"><a href="#about">A propos</a></li>
+                <li class="home"><a class="active" href="{{path('home')}}">Accueil</a></li>
+                <li class="home"><a href="{{path('questionnaire')}}">Formulaire</a></li>
+                <li class="home"><a href="{{path('contact')}}">Contact</a></li>
+                <li class="home"><a href="{{path('Apropos')}}">A propos</a></li>
             </ul>
             {% endblock content11 %}
             <div id="user">
@@ -80,12 +80,4 @@
                             <input type="submit" value="En savoir plus" style="margin-top: 10px;">
                 {% endblock content10 %}
             </div>
-            <div>
-                {% block content12 %}
-                    <img src="{{ asset('images/Totemcréateursentreprises.png') }}" alt="Logo_platform" title="Logo_platform">
-                {% endblock content12 %}
-            </div>
-    {% block javascripts %}
-        <script src="{{ asset('js/app.js') }}"></script>
-    {% endblock javascripts %}
 {% endblock body %}
