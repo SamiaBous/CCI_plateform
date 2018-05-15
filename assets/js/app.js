@@ -96,14 +96,7 @@ const $ = require('jquery');
 			});
 		});
 
-		/*$(document).ready(function(){
-				$( "select option[value='5'] " ).click(function(){	
-						$("h1").css("color", "red").html("MARYSE");
-			});
-		});*/
-
 	
-
 		var arrJa = [
 
 		  {val : 7, text: 'Agricole'},
@@ -262,13 +255,13 @@ const $ = require('jquery');
 
 		 $(document).ready(function(){
 				$( "select option[value='14'] " ).on("click",function (){
-						$( '#serv' ).show( "fast" );
+						$( '#serv' ).show( "slow" );
 			});
 		});
 		
 		 $(document).ready(function(){
 				$("select option[value='7'],[value='8'],[value='9'],[value='10'],[value='11'],[value='12'],[value='13'],[value='15'],[value='16'] ").on("click",function (){
-						$('#serv').hide("fast");
+						$('#serv').hide("slow");
 						 $('#questionnaire_service').hide("fast");
 			});
 		});
@@ -424,10 +417,20 @@ const $ = require('jquery');
 		});*/
 
 
-		$('#txtboxToFilter').keydown(function(event) {
-			// Autorise: retour arrière, tab, echap, and entrée
-			if (event.keyCode != 55)
-			{
-
+	    $(document).ready(function(){
+			$('#questionnaire_factSite').keydown(function(event){
+				var alertConfig;
+				var x = event.which || event.keyCode; // event.keyCode is used for IE8 and earlier
+				if (x != 103 && x != 8) {  // 103 is the 7 key
+				
+					alert ("Ce formulaire est destiné uniquement aux projets d'implantation d'entrepise en Haute-Saône \n Veuillez vous rapprocher des structures du département lié à votre projet.");
 			}
-});
+		});
+	});
+
+		
+                
+
+
+            
+        

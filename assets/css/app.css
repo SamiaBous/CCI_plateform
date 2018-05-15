@@ -114,11 +114,11 @@ ul#home {
     margin-left: -40px;
 }
 
-.navbar li#home {
+.navbar li.home {
     float: left;
 }
 
-.navbar li#home a {
+.navbar li.home a {
     display: block;
     color: white;
     text-align: center;
@@ -126,7 +126,7 @@ ul#home {
     text-decoration: none;
 }
 
-.navbar li#home a:hover:not(.active) {
+.navbar li.home a:hover:not(.active) {
     background-color: #f7941e;
     color: white;
 }
@@ -306,7 +306,7 @@ button.btn_inscri:hover {
 }
 
 #questionnaire_civilite {
-    width: 20%;
+    width: 26%;
     border-radius: 20px;
     border: solid 2px #f7941e;
 }
