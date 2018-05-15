@@ -6,7 +6,7 @@
         {% block stylesheets %}
          <link href="{{ asset('build/app.css') }}" rel="stylesheet" />
          <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-         <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+         
         {% endblock %}
     </head>
     
@@ -39,6 +39,9 @@
                                     {
                                         objData = { commune: request.term };
                                     }
+
+                                    console.log(objData);
+
                                     $.ajax({
                                     url: "question",
                                     dataType: "json",
@@ -48,32 +51,34 @@
                                     {
                                         response($.map(data, function (item)
                                         {
+
                                             return {
-                                                label: item.CodePostal + ", " + item.Commune,
+                                                label: item.codePostal + ", " + item.commune,
                                                 value: function (){
                                                 
                                                     if ($(this).attr('id') == 'questionnaire_codePostal')
                                                     {
-                                                        $('#questionnaire_commune').val(item.Commune);
-                                                        return item.CodePostal;
+                                                        $('#questionnaire_commune').val(item.commune);
+                                                        return item.codePostal;
                                                     }
                                                     else
                                                     {
-                                                        $('#questionnaire_codePostal').val(item.CodePostal);
-                                                        return item.Commune;
+                                                        $('#questionnaire_codePostal').val(item.codePostal);
+                                                        return item.commune;
                                                     }
                                                 }
                                             }
                                         }));
                                     }
                                 });
+
                             },
                             minLength: 3, // on indique qu'il faut taper au moins 3 caractères pour afficher l'autocomplétion
                             delay: 600
                         });
                     });
             </script>
-
+            <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
         {% endblock %}
     </body>
 </html>
