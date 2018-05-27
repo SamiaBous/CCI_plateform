@@ -6,7 +6,7 @@
         {% block stylesheets %}
          <link href="{{ asset('build/app.css') }}" rel="stylesheet" />
          <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-         
+         <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
         {% endblock %}
     </head>
     
@@ -40,10 +40,10 @@
                                         objData = { commune: request.term };
                                     }
 
-                                    console.log(objData);
+                                    
 
                                     $.ajax({
-                                    url: "question",
+                                    url: "reponseAjax",
                                     dataType: "json",
                                     data: objData,
                                     type: 'POST',
@@ -53,17 +53,17 @@
                                         {
 
                                             return {
-                                                label: item.codePostal + ", " + item.commune,
+                                                label: item.code_postal + ", " + item.commune,
                                                 value: function (){
                                                 
                                                     if ($(this).attr('id') == 'questionnaire_codePostal')
                                                     {
                                                         $('#questionnaire_commune').val(item.commune);
-                                                        return item.codePostal;
+                                                        return item.code_postal;
                                                     }
                                                     else
                                                     {
-                                                        $('#questionnaire_codePostal').val(item.codePostal);
+                                                        $('#questionnaire_codePostal').val(item.code_postal);
                                                         return item.commune;
                                                     }
                                                 }
@@ -78,7 +78,7 @@
                         });
                     });
             </script>
-            <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+            
         {% endblock %}
     </body>
 </html>

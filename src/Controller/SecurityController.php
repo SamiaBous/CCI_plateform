@@ -26,6 +26,6 @@ class SecurityController extends Controller
         'last_username' => $lastUsername,
         'error'         => $error,
     ));
-    /*return $this->redirectToRoute('accueil.html.twig');*/
+    return $this->redirectToRoute('admin');
     }
 }

@@ -13,10 +13,13 @@ use Doctrine\ORM\Query\ResultSetMappingBuilder;
 
 class QuestionnaireController extends Controller
 {   
+    /**
+     * @Route("/reponseAjax", name="reponseAjax")
+     */
     public function getCustomInformations()
     {
         // la table en base de données correspondant à l'entité liée au repository en cours
-        $table = $this->getClassMetadata()->table["epci"];
+        /*$table = $this->getClassMetadata()->table["epci"];
 
         $sql =  "SELECT m.code_postal codePostal, m.commune commune "
             ."FROM ".$table." AS m "
@@ -47,10 +50,52 @@ class QuestionnaireController extends Controller
 
         $stmt->execute();
         
-        return $list = $stmt->getResult();
+        return $list = $stmt->getResult();*/
         /*echo json_encode($list); // il n'y a plus qu'à convertir en JSON*/
 
-        return new JsonResponse(array('list' => $list));
+        $list = array();
+
+
+    /* veillez bien à vous connecter à votre base de données */
+    try {
+        $bdd = new \PDO('mysql:host=localhost;dbname=cci_platform;charset=utf8', "root", "");
+        $bdd->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        $bdd->setAttribute(\PDO::ATTR_EMULATE_PREPARES, false);
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage() . "<br/>";
+        die();
+    }
+    //Construction de la requete
+        $strQuery = "SELECT code_postal , commune  FROM epci WHERE ";
+        if (isset($_POST["codePostal"]))
+        {
+            $strQuery .= "code_postal LIKE :codePostal ";
+        }
+        else
+        {
+            $strQuery .= "commune LIKE :commune ";
+        }
+
+
+
+        $requete = $bdd->prepare($strQuery);
+
+        if (isset($_POST["codePostal"]))
+        {
+            $value = $_POST["codePostal"]."%";
+            $requete->bindParam(":codePostal", $value, \PDO::PARAM_STR);
+        }
+        else
+        {
+            $value = $_POST["commune"]."%";
+            $requete->bindParam(":commune", $value, \PDO::PARAM_STR);
+        }
+
+        $requete->execute();
+
+        $list = $requete->fetchAll(\PDO::FETCH_ASSOC);
+
+        return new JsonResponse($list);
 
  
     } 
@@ -81,7 +126,7 @@ class QuestionnaireController extends Controller
             $em->persist($questionnaire);
             $em->flush();
             
-            return $this->redirectToRoute('login');
+            return $this->redirectToRoute('home');
         }
         return $this->render('questionnaire.html.twig',
             
